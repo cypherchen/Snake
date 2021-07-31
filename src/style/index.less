@@ -1,0 +1,78 @@
+// 设置变量
+@bg-color: #b7d4a8;
+
+
+// 清除样式
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// 字体
+body {
+  font: bold 20px "Courier";
+}
+
+// 游戏主界面
+#main {
+  width: 360px;
+  height: 420px;
+  background-color: @bg-color;
+  caret-color: rgba(0,0,0,0);
+  margin: 100px auto;
+  border: 10px solid #000;
+  border-radius: 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+// 游戏屏幕
+#stage {
+  width: 304px;
+  height: 304px;
+  border: 2px solid black;
+  position: relative;
+
+  // 蛇
+  #snake {
+    &>div {
+      width: 10px;
+      height: 10px;
+      background-color: #000;
+      border: 1px solid @bg-color;
+      position: absolute;
+    }
+  }
+
+  // 食物
+  #food {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-between;
+
+    left: 20px;
+    top: 120px;
+
+    // 设置食物内部小方块样式
+    &>div {
+      width: 4px;
+      height: 4px;
+      background-color: #000;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+// 积分牌
+#score-panel {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
